@@ -1,0 +1,479 @@
+@charset "UTF-8";
+
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans JP', sans-serif, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  background-color: #ffffff;
+}
+li{
+  list-style: none;
+}
+hr{
+  width: 90%;
+  height: 1px;
+}
+
+.main_visual{
+  width: 100%;
+  position: relative;
+
+}
+.main_visual_image{
+    width: 100%;
+ }
+.main_visual_image img{
+  width: 100%;
+}
+
+.navigation{
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    z-index: 100;
+    min-width: 50vw;
+    border-radius: 30px;
+    background-color: rgba(247, 247, 247, 0.938);
+    text-align: center;
+  }
+  .gnavi{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.gnavi li a{
+    display: block;
+    padding: 0 8px;
+    text-decoration: none;
+    color: #333;
+	  position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover{
+	color:#0481A2;
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:#0481A2;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.main_visual_text_container{
+  width: 50%;
+  height: 20%;
+  z-index: 10;
+  position:absolute;
+  top: 25%;
+  left: 8%;
+  margin-bottom: 2%;
+}
+.main_visual_text{
+  line-height: 1;
+  color: #ffffffd8;
+  font-size: 3vmax;
+  text-shadow: 2px 3px 3px rgba(84, 84, 84, 0.685);
+  font-weight: bold;
+  font-family: "リュウミン H-KL";
+}
+.cmp_navi{
+  width: 50%;
+  height: 40%;
+  position:absolute;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+.cmp_navi_content{
+  width: 30%;
+  color: #d4d4d4;
+  border: solid 2px #e5e5e5;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  background: #1a1a1a;
+}
+.cmp_navi_img{
+  width: 100%;
+  opacity: 1;
+  
+}
+.cmp_navi_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+  /* filter: brightness(70%); */
+}
+.cmp_navi_img :hover{
+  transition: .3s;
+  opacity: 0.6;
+}
+.cmp_navi_title{
+  position:absolute;
+  transform: rotate(90deg);
+  text-shadow: 3px 3px 4px rgba(99, 99, 99, 0.853);
+  font-weight: bold;
+  font-size: 5vmax;
+}
+.cmp_navi_title a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.section_title{
+  font-size: 48px;
+  text-align: center;
+}
+
+.competition{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+.cmp_title{
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+}
+.cmp_title:before,
+.cmp_title:after{
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background-color: #000000;
+  display: block;
+}
+.cmp_title:before{
+  margin-right:1rem;
+}
+.cmp_title:after{
+  margin-left: 1rem;
+}
+.cmp_container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cmp_container_top{
+  width: 100%;
+  height: 50%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cmp_image1{
+  width: 45%;
+  height: 90%;
+  margin-right: 4%;
+}
+.cmp_image1 img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 3px 4px 4px rgba(185, 185, 185, 0.853);
+}
+.cmp_text1{
+  width: 45%;
+  height: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.cmp_text1 h2{
+  padding: 0.5em 2em;
+  margin: 0;
+  font-size: 3vmin;
+}
+.cmp_text1 h2:before,.cmp_text1 h2:after{ 
+  content:'';
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  display: inline-block;
+}
+.cmp_text1 h2:before{
+  border-left: solid 1px #5767bf;
+  border-top: solid 1px #5767bf;
+  top:0;
+  left: 0;
+}
+.cmp_text1 h2:after{
+  border-right: solid 1px #5767bf;
+  border-bottom: solid 1px #5767bf;
+  bottom:0;
+  right: 0;
+}
+
+
+.cmp_container_bottom{
+  width: 100%;
+  height: 50%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cmp_image2{
+  width: 45%;
+  height: 90%;
+  margin-left: 4%;
+}
+.cmp_image2 img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 3px 4px 4px rgba(185, 185, 185, 0.853);
+}
+.cmp_text2{
+  width: 45%;
+  height: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.cmp_text2 h2{
+  padding: 0.5em 2em;
+  margin: 0;
+  font-size: 3vmin;
+}
+.cmp_text2:before,.cmp_text2:after{ 
+  content:'';
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  display: inline-block;
+}
+.cmp_text2:before{
+  border-left: solid 1px #5767bf;
+  border-top: solid 1px #5767bf;
+  top:0;
+  left: 0;
+}
+.cmp_text2:after{
+  border-right: solid 1px #5767bf;
+  border-bottom: solid 1px #5767bf;
+  bottom:0;
+  right: 0;
+}
+
+
+.event{
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.event_subtitle{
+  font-size: 40px;
+}
+.event_contents{
+  width: 100%;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+  /*　画像の拡大＋テキスト出現　*/
+
+.event_container{/*テキストの基点となる位置を定義*/
+	position: relative;
+  margin: 1%;
+  flex-grow: 0;
+}
+
+.event_container span.mask{
+	position: relative;
+	transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+	display: block;/*画像をくくるspanタグをブロック要素にする*/
+  line-height: 0;/*行の高さを0にする*/
+  overflow:hidden;/*拡大してはみ出る要素を隠す*/
+}
+
+.event_container:hover span.mask::before{/*hoverした時の変化*/
+	content:"";
+	position: absolute;
+	z-index:2;
+	top: 5%;
+	left: 5%;
+	width: calc(100% - 20px);
+  height: calc(100% - 20px);
+	background:rgba(0,0,0,0.5);/*背景色*/
+  flex-grow: 1;
+}
+
+.event_container img{
+  width: 40vmin;
+  height: auto;
+	transform: scale(1);
+	filter: blur(0);
+  flex-grow: 1;
+	transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+
+.event_container:hover img{/*hoverした時の変化*/
+	transform: scale(1.2);/*拡大の値を変更したい場合はこの数値を変更*/
+	filter: blur(2px);/*ぼかし具合を変更したい場合はこの数値を変更*/
+}
+
+.event_container span.cap{
+  width: 80%;
+  text-align: center;
+	opacity:0;
+	transition: .5s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+	position: absolute;
+	z-index:3;/*テキストを前面に出す*/
+	top: 50%;
+  left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;/*テキストの色を変えたい場合はここを修正*/
+  line-height: 1.5;/*行の高さを1.5にする*/
+}
+
+.event_container:hover span.cap{/*hoverした時の変化*/
+	opacity:1;
+}
+
+
+.gallery{
+  width: 100%;
+
+}
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+.gallery_contents{
+  columns: 4;/*段組みの数*/
+  padding:0 15px;/*ギャラリー左右に余白をつける*/
+  margin:0;
+  }
+  
+  .gallery_contents li {
+    margin-bottom: 20px;/*各画像下に余白をつける*/
+    list-style:none;
+  }
+  
+  /*ギャラリー内のイメージは横幅100%にする*/
+  .gallery_contents img{
+    width:100%;
+    height:auto;
+    vertical-align: bottom;/*画像の下にできる余白を削除*/}
+  
+  /*　横幅900px以下の段組み設定　*/
+  @media only screen and (max-width: 900px) {
+    .gallery_contents{
+    columns:3;
+    }	
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .gallery_contents{
+    columns: 2;
+    }	
+  }
+
+
+  /*アコーディオン全体*/
+.QA_area{
+  list-style: none;
+  width: 96%;
+  max-width: 900px;
+  margin:0 auto;
+}
+
+.QA_area li{
+  margin: 10px 0;
+}
+
+.QA_area section {
+border: 1px solid #ccc;
+}
+
+/*アコーディオンタイトル*/
+.question {
+  position: relative;/*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size:1rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .5s ease;
+}
+
+/*アイコンの＋と×*/
+.question::before,
+.question::after{
+  position: absolute;
+  content:'';
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+  
+}
+.question::before{
+  top:48%;
+  left: 15px;
+  transform: rotate(0deg);
+  
+}
+.question::after{    
+  top:48%;
+  left: 15px;
+  transform: rotate(90deg);
+
+}
+
+/*　closeというクラスがついたら形状変化　*/
+
+.question.close::before{
+transform: rotate(45deg);
+}
+
+.question.close::after{
+transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.answer {
+  display: none;/*はじめは非表示*/
+  background: #f3f3f3;
+  margin:0 3% 3% 3%;
+  padding: 3%;
+}
+.footer small{
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
